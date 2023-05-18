@@ -18,7 +18,11 @@ class FileView(APIView):
         if file_serializer.is_valid():
             file_serializer.save()
 
-            dic_res = {}
+            dic_res = {
+                'result_0': {},
+                'result_1': {},
+                'result_2': {}
+            }
             sub_res = {}
             path = file_serializer.data['file']
             path_mqad = path[1:]
@@ -74,7 +78,7 @@ class FileView(APIView):
                     sub_res["Name"] = result[0].title()
                     sub_res["Condition"] = result[1].title()
                     sub_res["Type"] = result[2].title()
-                    dic_res[f"result_{i}"] = sub_res
+                    dic_res[f"result_{i}"].update(sub_res)
                 
             elif file_serializer.data['type'] == 'leaf': # Check if the user wants leaves
                 image = load_prep(path_mqad)
@@ -88,7 +92,7 @@ class FileView(APIView):
                     sub_res["Name"] = result[0].title()
                     sub_res["Condition"] = result[1].title()
                     sub_res["Type"] = file_serializer.data['type'].title()
-                    dic_res[f"result_{i}"] = sub_res
+                    dic_res[f"result_{i}"].update(sub_res)
             else:
                 return Response("Type is not valid", status=status.HTTP_400_BAD_REQUEST)
             

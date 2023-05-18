@@ -1,0 +1,5 @@
+Tomato___Early_Blight
+Tomato___Healthy
+Tomato___Late_Blight
+Tomato___Powdery_Mildew
+Tomato___Septoria_Leaf_Spot

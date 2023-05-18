@@ -1,0 +1,4 @@
+Bell_Pepper___Bacterial_Spot
+Bell_Pepper___Healthy
+Bell_Pepper___Phytophthora_Blight
+Bell_Pepper___Powdery_Mildew

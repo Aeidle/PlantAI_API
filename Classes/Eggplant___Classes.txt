@@ -1,0 +1,4 @@
+Eggplant___Bacterial_Spot
+Eggplant___Healthy
+Eggplant___Powdery_Mildew
+Eggplant___Verticillium_Wilt

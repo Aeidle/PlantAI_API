@@ -1,0 +1,3 @@
+Corn_Maize___Blight
+Corn_Maize___Common_Rust
+Corn_Maize___Healthy

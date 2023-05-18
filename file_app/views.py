@@ -19,6 +19,7 @@ class FileView(APIView):
             file_serializer.save()
 
             dic_res = {}
+            sub_res = {}
             path = file_serializer.data['file']
             path_mqad = path[1:]
             
@@ -52,30 +53,42 @@ class FileView(APIView):
                 predicted_value = classes[pred_idx]
                 return predicted_value
             
+            # Make prediction but 3 results
+            def make_prediction_3(model, image, classes):
+                pred = model.predict(tf.expand_dims(image, axis=0))
+                pred_idx = np.argsort(pred)[0][-3:]
+                predicted_value = [classes[i] for i in pred_idx]
+                return predicted_value
+            
             
             if file_serializer.data['type'] == 'fruit': # Check if the user wants fruits
                 image = load_prep(path_mqad)
                 model = load_model_fruit()
                 classes = load_classes_fruit()
-                prediction = make_prediction(model=model, classes=classes, image=image)
+                prediction = make_prediction_3(model=model, classes=classes, image=image)
+                print(prediction)
                 
                 # result
-                result = prediction.split(sep="___")
-                dic_res["Name"] = result[0].title()
-                dic_res["Condition"] = result[1].title()
-                dic_res["Type"] = result[2].title()
+                for i, elem in enumerate(prediction):
+                    result = elem.split(sep="___")
+                    sub_res["Name"] = result[0].title()
+                    sub_res["Condition"] = result[1].title()
+                    sub_res["Type"] = result[2].title()
+                    dic_res[f"result_{i}"] = sub_res
                 
             elif file_serializer.data['type'] == 'leaf': # Check if the user wants leaves
                 image = load_prep(path_mqad)
                 model = load_model_leaf(model_name=file_serializer.data['name'].title())
                 classes = load_classes_leaf(classes_name=file_serializer.data['name'].title())
-                prediction = make_prediction(model=model, classes=classes, image=image)
+                prediction = make_prediction_3(model=model, classes=classes, image=image)
                 
                 # result
-                result = prediction.split(sep="___")
-                dic_res["Name"] = result[0].title()
-                dic_res["Condition"] = result[1].title()
-                dic_res["Type"] = file_serializer.data['type'].title()
+                for i, elem in enumerate(prediction):
+                    result = elem.split(sep="___")
+                    sub_res["Name"] = result[0].title()
+                    sub_res["Condition"] = result[1].title()
+                    sub_res["Type"] = file_serializer.data['type'].title()
+                    dic_res[f"result_{i}"] = sub_res
             else:
                 return Response("Type is not valid", status=status.HTTP_400_BAD_REQUEST)
             

@@ -29,13 +29,13 @@ class FileView(APIView):
             
             # load the fruits model
             def load_model_fruit():
-                return keras.models.load_model('assets/plantai_model_adil.h5')
+                return keras.models.load_model('assets/PlantAI_Model_Fruit.h5')
             # load the leafs model
             def load_model_leaf(model_name):
                 return keras.models.load_model(f'Models/{model_name}___Leaf.h5')
             # load the fruit classes
             def load_classes_fruit():
-                with open('assets/classes.txt', 'r') as f:
+                with open('assets/Classes.txt', 'r') as f:
                     class_names = f.read().splitlines()
                 return class_names
             # load the leaf classes
@@ -60,8 +60,9 @@ class FileView(APIView):
             # Make prediction but 3 results
             def make_prediction_3(model, image, classes):
                 pred = model.predict(tf.expand_dims(image, axis=0))
-                pred_idx = np.argsort(pred)[0][-3:]
+                pred_idx = np.argsort(-pred)[0][:3]
                 predicted_value = [classes[i] for i in pred_idx]
+                print(predicted_value)
                 return predicted_value
             
             

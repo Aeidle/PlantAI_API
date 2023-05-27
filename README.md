@@ -13,33 +13,33 @@ Follow these steps to install and set up the Django Machine Learning API ():
 
 1. Clone the repository:
     ```bash
-    $ git clone https://github.com/Aeidle/PlantAI_API.git
+    git clone https://github.com/Aeidle/PlantAI_API.git
     ```
 
 
 2. Change into the project directory:
     ```bash
-    $ cd PlantAI_API
+    cd PlantAI_API
     ```
 
 3. Create and activate a virtual environment
     ```bash
-    $ python -m venv venv
-    $ source venv/bin/activate <!--- for macOS/Linux --> 
-    $ venv\Scripts\activate <!-- for Windows -->
+    python -m venv venv
+    source venv/bin/activate <!--- for macOS/Linux --> 
+    venv\Scripts\activate <!-- for Windows -->
     ```
 
 4. Install the required dependencies:
     ```bash
-    $ pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 5. Perform database migrations:
     ```bash
-    $ python manage.py migrate
+    python manage.py migrate
     <!--- If the above command did not work, you can try running the following two commands instead: --->
-    $ python manage.py makemigrations
-    $ python manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
     ```
 
 
@@ -52,7 +52,7 @@ Follow these steps to run the Django Machine Learning API:
 
 2. Start the development server:
     ```bash
-    $ python manage.py runserver
+    python manage.py runserver
     ```
 
 3. The API will now be accessible locally at `http://localhost:8000/`. Use a tool like [Postman](https://www.postman.com/) to send requests to the API endpoints.
@@ -81,19 +81,20 @@ Contributions are welcome! If you'd like to contribute to the Django Machine Lea
 
 2. Create a new branch with a descriptive name:
     ```git
-    $ git checkout -b <branch_name>
+    git checkout -b <branch_name>
     ```
 
 3. Make your desired changes to the codebase.
 
 4. Commit your changes:
     ```git
-    $ git commit -m "<commit_message>"
+    git commit -m "<commit_message>"
     ```
 
 5. Push the changes to your forked repository:
     ```git
-    $ git push origin <branch_name>
+    git push origin <branch_name>
     ```
 
 6. Open a pull request on the original repository and describe your changes.
+

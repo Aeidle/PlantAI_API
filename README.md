@@ -25,7 +25,7 @@ Follow these steps to install and set up the Django Machine Learning API ():
 3. Create and activate a virtual environment
     ```bash
     python -m venv venv
-    source venv/bin/activate <!--- for macOS/Linux --> 
+    source venv/bin/activate <!-- for macOS/Linux --> 
     venv\Scripts\activate <!-- for Windows -->
     ```
 
@@ -37,7 +37,7 @@ Follow these steps to install and set up the Django Machine Learning API ():
 5. Perform database migrations:
     ```bash
     python manage.py migrate
-    <!--- If the above command did not work, you can try running the following two commands instead: --->
+    <!-- If the above command did not work, you can try running the following two commands instead: -->
     python manage.py makemigrations
     python manage.py migrate
     ```

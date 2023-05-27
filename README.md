@@ -35,10 +35,15 @@ Follow these steps to install and set up the Django Machine Learning API:
 
 5. Perform database migrations:
 
-```python manage.py migrate```
-[//]: # (This is a comment that will not be rendered in the final output.)
-```python manage.py makemigrations```
-```python manage.py migrate```
+```python
+python manage.py migrate
+<!---
+If the above command did not work, you can try running the following two commands instead:
+```python
+python manage.py makemigrations
+python manage.py migrate
+```
+--->
 
 
 ## Usage

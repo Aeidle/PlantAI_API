@@ -52,9 +52,23 @@ Follow these steps to run the Django Machine Learning API:
 ```python manage.py runserver```
 
 
-3. The API will now be accessible locally at `http://localhost:8000/`. You can use a tool like [Postman](https://www.postman.com/) to interact with the API endpoints.
+3. The API will now be accessible locally at `http://localhost:8000/`. Use a tool like [Postman](https://www.postman.com/) to send requests to the API endpoints.
 
-4. [Provide instructions or examples on how to use the API, including the available endpoints, request/response formats, and any authentication/authorization requirements.]
+4. **Endpoint**: `/file/upload/`
+- **Method**: `POST`
+- **URL**: `http://localhost:8000/file/upload/`
+- **Request Format**:
+  - The API expects an RGB image (squared for best results).
+  - The following fields should be provided:
+    - `key: remark`, `value: anything`
+    - `key: type`, `value: fruit or leaf`
+    - `name: if fruit, write 'none'. If leaf, write the name of the plant with the first letter in uppercase and in singular form (e.g., Potato). If the name is composed, write both first letters in uppercase separated by an underscore (e.g., Bell_Pepper)`.
+- **Response Format**:
+  - The API will return a JSON response containing the 3 best results.
+  - Each result will have the following keys:
+    - `key: name`, `value: plant_name`
+    - `key: condition`, `value: healthy or disease name`
+    - `key: type`, `value: fruit or leaf`
 
 ## Contributing
 

@@ -62,10 +62,11 @@ Follow these steps to run the Django Machine Learning API:
 - **URL**: `http://localhost:8000/file/upload/`
 - **Request Format**:
   - The API expects an RGB image (squared for best results).
-  - The following fields should be provided:
+  - The following fields should be provided in the body:
+    - `key: file`, `value: your image file`
     - `key: remark`, `value: anything`
     - `key: type`, `value: fruit or leaf`
-    - `name: if fruit, write 'none'. If leaf, write the name of the plant with the first letter in uppercase and in singular form (e.g., Potato). If the name is composed, write both first letters in uppercase separated by an underscore (e.g., Bell_Pepper)`.
+    - `key: name`, `value: if fruit, write 'none'. If leaf, write the name of the plant with the first letter in uppercase and in singular form (e.g., Potato). If the name is composed, write both first letters in uppercase separated by an underscore (e.g., Bell_Pepper)`.
 - **Response Format**:
   - The API will return a JSON response containing the 3 best results.
   - Each result will have the following keys:

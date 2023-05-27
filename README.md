@@ -14,7 +14,9 @@ Follow these steps to install and set up the Django Machine Learning API:
 1. Clone the repository:
 
     $ git clone https://github.com/Aeidle/PlantAI_API.git
-
+[comment]: # this is a cemment
+[comment]: #this is a comment
+[comment]: #
 
 2. Change into the project directory:
 

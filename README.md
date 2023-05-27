@@ -38,12 +38,12 @@ Follow these steps to install and set up the Django Machine Learning API:
 ```bash
 python manage.py migrate
 <!--- 
-If the above command did not work, you can try running the following two commands instead:
-```bash
+    If the above command did not work, you can try running the following two commands instead:
+--->
 python manage.py makemigrations
 python manage.py migrate
 ```
---->
+
 
 
 ## Usage

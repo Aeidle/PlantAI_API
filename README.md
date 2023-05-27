@@ -36,7 +36,7 @@ Follow these steps to install and set up the Django Machine Learning API:
 5. Perform database migrations:
 
 ```python manage.py migrate```
-<!-- if it did not work use this two commands instead -->
+[//]: # (This is a comment that will not be rendered in the final output.)
 ```python manage.py makemigrations```
 ```python manage.py migrate```
 
@@ -54,7 +54,7 @@ Follow these steps to run the Django Machine Learning API:
 
 3. The API will now be accessible locally at `http://localhost:8000/`. Use a tool like [Postman](https://www.postman.com/) to send requests to the API endpoints.
 
-4. **Endpoint**: `/file/upload/`
+- **Endpoint**: `/file/upload/`
 - **Method**: `POST`
 - **URL**: `http://localhost:8000/file/upload/`
 - **Request Format**:

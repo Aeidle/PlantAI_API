@@ -23,11 +23,11 @@ Follow these steps to install and set up the Django Machine Learning API ():
     ```
 
 3. Create and activate a virtual environment
-    ```bash
+
+```bash
     python -m venv venv
-    source venv/bin/activate <!-- for macOS/Linux --> 
-    venv\Scripts\activate <!-- for Windows -->
-    ```
+    source venv/bin/activate <!--- for macOS/Linux --->
+    venv\Scripts\activate <!--- for Windows --->
 
 4. Install the required dependencies:
     ```bash

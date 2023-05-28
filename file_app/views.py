@@ -29,7 +29,7 @@ class FileView(APIView):
             
             # load the fruits model
             def load_model_fruit():
-                return keras.models.load_model('assets/PlantAI_Model_Fruit.h5')
+                return keras.models.load_model('assets/PlantAI_Model_Fruit_EfficientNetB0.h5')
             # load the leafs model
             def load_model_leaf(model_name):
                 return keras.models.load_model(f'Models/{model_name}___Leaf.h5')

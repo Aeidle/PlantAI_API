@@ -35,7 +35,7 @@ class FileView(APIView):
                 return keras.models.load_model(f'Models/{model_name}___Leaf.h5')
             # load the fruit classes
             def load_classes_fruit():
-                with open('assets/Classes.txt', 'r') as f:
+                with open('assets/classes.txt', 'r') as f:
                     class_names = f.read().splitlines()
                 return class_names
             # load the leaf classes

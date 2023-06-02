@@ -3,6 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
+from django.conf import settings
+from rest_framework.exceptions import AuthenticationFailed
 from .model_utils import load_prep, make_prediction_3
 from .model_loader import load_model_fruit, load_model_leaf, load_classes_fruit, load_classes_leaf
 
@@ -43,6 +45,9 @@ leaf_classes = {
 class FileView(APIView):
 
     def post(self, request, *args, **kwargs):
+        api_key = request.headers.get('X-API-Key')
+        if api_key != settings.API_KEY:
+            raise AuthenticationFailed('Invalid API key')
         
         from .serializers import FileSerializer  # Import the serializer here
         global fruit_model, leaf_models, fruit_classes, leaf_classes

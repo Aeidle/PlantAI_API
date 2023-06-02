@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# API_KEY
+API_KEY = os.getenv('API_KEY', 'plantai@wehelp@adil')
 
 # Application definition
 

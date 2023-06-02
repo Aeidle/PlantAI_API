@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-l_^!tx-iwpm1_pity4z_*vqw54@c+hzr#za0&*75ujq6c7v+@r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # API_KEY
-API_KEY = os.getenv('API_KEY', 'plantai@wehelp@adil')
+API_KEY = os.getenv('API_KEY', 'plantai@wehelp')
 
 # Application definition
 

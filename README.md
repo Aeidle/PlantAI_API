@@ -60,6 +60,8 @@ Follow these steps to run the Django Machine Learning API:
 - **Endpoint**: `/file/upload/`
 - **Method**: `POST`
 - **URL**: `http://localhost:8000/file/upload/`
+- **Headers**:
+    - `key: X-API-Key`, `value: Your API Key`
 - **Request Format**:
   - The API expects an RGB image (squared for best results).
   - The following fields should be provided in the body:

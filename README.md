@@ -73,6 +73,8 @@ Follow these steps to run the Django Machine Learning API:
     - `key: condition`, `value: healthy or disease name`
     - `key: type`, `value: fruit or leaf`
 
+To obtain your API Key, visit www.plantai.com or your local host after running the server locally.
+
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute to the Django Machine Learning API project, please follow these steps:
